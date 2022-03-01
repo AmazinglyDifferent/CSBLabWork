@@ -32,6 +32,5 @@ int main()
   scanf("%s", noun);
 
   pluralize (noun);
-
   return 0;
 }
