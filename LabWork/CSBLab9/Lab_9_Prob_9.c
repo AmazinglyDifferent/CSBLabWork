@@ -31,5 +31,6 @@ int main(){
     }
 
     printf("PATTERN FOUND %d Times\n", count);
+    
     return 0;
 }
