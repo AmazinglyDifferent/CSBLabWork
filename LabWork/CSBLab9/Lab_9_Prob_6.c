@@ -25,5 +25,6 @@ int main(){
     for(int i=0;i<countS;i++){
       printf("%s\n",str[i]);
     }
+    
     return 0;
 }
