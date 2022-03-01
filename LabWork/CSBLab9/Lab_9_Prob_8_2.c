@@ -12,6 +12,7 @@ int BinarySearch(int array[], int start, int end, int element){
     }
     return 1;
 }
+
 int main(){
     int array[10];
     
@@ -35,5 +36,6 @@ int main(){
     else {
         printf("Element found at index : %d",result);
     }
+    
     return 0;
 }
