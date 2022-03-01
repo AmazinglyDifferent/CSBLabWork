@@ -33,5 +33,6 @@ int main() {
     bubbleSort(data, s);
     printf("Sorted Array is:\n");
     printArr(data, s);
+    
     return 0;
 }
