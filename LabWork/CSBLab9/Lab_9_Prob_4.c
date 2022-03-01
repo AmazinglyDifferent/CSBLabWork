@@ -3,18 +3,17 @@
 int main()
 {
     char string[50];
-    char *p;
-
+    
     printf("Enter any string: ");
     fgets(string, 100, stdin);
-
-    // Assigning the base address str[0] to pointer
-    p=string;
+   
+    char *p=string;
 
     printf("The input string is: ");
-    //'\0' is Null Terminator/ End of String
-    while(*p!='\0')
-        printf("%c",*p++);
-
+   
+    while(*p!='\0'){
+        printf("%c",*p++); //printing and then incrementing
+    }
+    
     return 0;
 }
