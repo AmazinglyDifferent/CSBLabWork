@@ -22,15 +22,18 @@ void pluralize (char word[])
     strcat(word, "s");
   }
 
-  printf("New word is: %s", word);
+  printf("Plural form is: %s\n", word);
 }
 
 int main()
 {
-  char noun[20];   
-  printf("Enter a noun in singular form: ");
-  scanf("%s", noun);
-
-  pluralize (noun);
+  for( int i=0; i<9; i++){
+    printf("Singular form: ");
+    char noun[20];   
+    scanf("%s", noun);
+    printf("%s",noun);
+    printf("\n");
+    pluralize (noun);
+  }
   return 0;
 }
