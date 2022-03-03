@@ -4,10 +4,10 @@ int BinarySearch(int array[], int start, int end, int search){
     while (start <= end){
 
         int middle = start + (end- start)/2;
-        int *p = array[middle];        
+        int *p = &array[middle];        
         
         if (*p == search){
-            printf("Element found at index : %d",middle-2);
+            printf("Element found at index : %d\n",middle);
             return middle;
         }
         else if (*p < search)
@@ -24,7 +24,7 @@ int main(){
     int array[5];
     
     int num;
-    printf("Enter number of elements : ");
+    printf("Enter number of elements : \n");
     scanf("%d",&num);
 
     printf("Enter array elements :\n");
@@ -33,7 +33,7 @@ int main(){
     }
 
     int search;
-    printf("Enter element to search : ");
+    printf("Enter element to search : \n");
     scanf("%d",&search);
 
     BinarySearch(array, 0, num-1, search);
