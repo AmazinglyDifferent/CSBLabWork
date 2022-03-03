@@ -30,5 +30,6 @@ int main()
 
     bubbleSort(data, size);
     printArray(data, size);
+    
     return 0;
 }
