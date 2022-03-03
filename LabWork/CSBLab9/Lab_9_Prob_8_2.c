@@ -17,6 +17,7 @@ int BinarySearch(int array[], int start, int end, int search){
         }
     }
     printf("Element is not in the array ");
+    
     return -1;
 }
 
