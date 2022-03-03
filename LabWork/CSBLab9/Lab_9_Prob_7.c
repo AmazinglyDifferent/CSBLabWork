@@ -1,38 +1,34 @@
 #include <stdio.h>
 
-void printArr(int array[], int size) {
-    for (int i = 0; i < size; i++) {
-        printf("%d  ", array[i]);
-    }
+void printArray(int arr[], int size)
+{
+    printf("Sorted array is : \n");
+    for (int i=0; i < size; i++)
+        printf("%d ", arr[i]);
     printf("\n");
 }
 
-void bubbleSort(int array[], int size) {
-    for (int j = 0; j < size - 1; j++) {
-        for (int i = 0; i < size - j - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                int temp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = temp;
-            }
+void bubbleSort(int arr[], int size)
+{
+   for (int i = 0; i < size-1; i++){      
+       for (int j = 0; j < size-i-1; j++){ 
+            if (arr[j] > arr[j+1]){
+                int *add1 = &arr[j];
+                int *add2 = &arr[j+1];
+                int temp = *add1;
+                *add1 = *add2;
+                *add2 = temp;
+           }
         }
-    }
+   }
 }
 
-int main() {
-    int s;
-    int data[s];
-  
-    printf("Enter size of an array:");
-    scanf("%d",&s);
-    for(int i=0; i<s; i++){
-        printf("Enter data[%d]:",i+1);
-        scanf("%d",&data[i]);
-    }
+int main()
+{
+    int data[] = {7, 3, 1, 2, 5};
+    int size = sizeof(data)/sizeof(data[0]);
 
-    bubbleSort(data, s);
-    printf("Sorted Array is:\n");
-    printArr(data, s);
-    
+    bubbleSort(data, size);
+    printArray(data, size);
     return 0;
 }
