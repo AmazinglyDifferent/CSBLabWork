@@ -21,11 +21,13 @@ void bubbleSort(int arr[], int size)
            }
         }
    }
+   printf("Minimum Marks are : %d\n",arr[0]);
+   printf("Maximum Marks are : %d\n",arr[4]);
 }
 
 int main()
 {
-    int data[] = {7, 3, 1, 2, 5};
+    int data[] = {46, 40, 50, 43, 35};
     int size = sizeof(data)/sizeof(data[0]);
 
     bubbleSort(data, size);
