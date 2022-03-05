@@ -11,7 +11,7 @@ int main(){
     p=array;
     int sum=0;
     
-    while(*p!='\0'){
+    while(p < array + 5){
         sum= sum + *p;
         p++;
     }
