@@ -1,0 +1,21 @@
+3
+01
+Arnav Tyagi
+100000
+CSE
+29/3/2021
+02
+Mrityunjay Baghel
+200000
+ECE
+30/3/2021
+03
+Hardik Sachan
+50000
+CSE
+31/3/2021
+1
+2
+3
+4
+5
