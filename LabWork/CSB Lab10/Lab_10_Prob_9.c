@@ -57,6 +57,7 @@ int main()
     {
         if (students[i].marks.english + students[i].marks.maths + students[i].marks.physics + students[i].marks.chemistry + students[i].marks.computers < 400)
         {
+            printf("Student Name is : ");
             printf("%s %s %s\n", students[i].name.firstName, students[i].name.middleName, students[i].name.lastName);
         }
     }
@@ -73,12 +74,15 @@ int main()
     printf("Enter the day of birth: ");
     scanf("%d", &day);
     printf("%d",day);
+    printf("\n");
     printf("Enter the month of birth: ");
     scanf("%d", &month);
     printf("%d",month);
+    printf("\n");
     printf("Enter the year of birth: ");
     scanf("%d", &year);
     printf("%d",year);
+    printf("\n");
     
     for (int i = 0; i < count; i++)
     {
@@ -91,9 +95,10 @@ int main()
 
     // Write a program to delete the record of the student with the given last name.
     char lastName[50];
-    printf("Enter the last name of the student: \n");
+    printf("Enter the last name of the student: ");
     scanf(" %[^\n]s", lastName);
-
+    printf("%s",lastName);
+    printf("\n");
     for (int i = 0; i < count; i++)
     {
         if (strcmp(students[i].name.lastName, lastName) == 0)
@@ -125,39 +130,60 @@ int main()
     {
         if (students[i].rollNo == rollNo)
         {
-            printf("Enter the new first name: \n");
+            printf("Enter the new first name: ");
             scanf("%s", students[i].name.firstName);
-            printf("Enter the new middle name: \n");
+            printf("%s", students[i].name.firstName);
+            printf("\n");
+            printf("Enter the new middle name: ");
             scanf("%s", students[i].name.middleName);
-            printf("Enter the new last name: \n");
+            printf("%s", students[i].name.middleName);
+            printf("\n");
+            printf("Enter the new last name: ");
             scanf("%s", students[i].name.lastName);
-            printf("Enter the new day of birth: \n");
+            printf("%s", students[i].name.lastName);
+            printf("\n");
+            printf("Enter the new day of birth: ");
             scanf("%d", &students[i].dob.day);
-            printf("Enter the new month of birth: \n");
+            printf("%d",students[i].dob.day);
+            printf("\n");
+            printf("Enter the new month of birth: ");
             scanf("%d", &students[i].dob.month);
-            printf("Enter the new year of birth: \n");
+            printf("%d", students[i].dob.month);
+            printf("\n");
+            printf("Enter the new year of birth: ");
             scanf("%d", &students[i].dob.year);
-            printf("Enter the new marks in English: \n");
+            printf("%d", students[i].dob.year);
+            printf("\n");
+            printf("Enter the new marks in English: ");
             scanf("%d", &students[i].marks.english);
-            printf("Enter the new marks in Maths: \n");
+            printf("%d", students[i].marks.english);
+            printf("\n");
+            printf("Enter the new marks in Maths: ");
             scanf("%d", &students[i].marks.maths);
-            printf("Enter the new marks in Physics: \n");
+            printf("%d", students[i].marks.maths);
+            printf("\n");
+            printf("Enter the new marks in Physics: ");
             scanf("%d", &students[i].marks.physics);
-            printf("Enter the new marks in Chemistry: \n");
+            printf("%d", students[i].marks.physics);
+            printf("\n");
+            printf("Enter the new marks in Chemistry: ");
             scanf("%d", &students[i].marks.chemistry);
-            printf("Enter the new marks in Computers: \n");
+            printf("%d", students[i].marks.chemistry);
+            printf("\n");
+            printf("Enter the new marks in Computers: ");
             scanf("%d", &students[i].marks.computers);
+            printf("%d", students[i].marks.computers);
         }
     }
-    printf("First Name : %s\n", students[rollNo].name.firstName);
-    printf("Midlle Name : %s\n", students[rollNo].name.middleName);
-    printf("Last Name : %s\n", students[rollNo].name.lastName);
-    printf("Date of birth : %d/%d/%d\n",students[rollNo].dob.day,students[rollNo].dob.month,students[rollNo].dob.year);
-    printf("Marks in Chemistry : %d\n",students[rollNo].marks.chemistry);
-    printf("Marks in Computers : %d\n",students[rollNo].marks.computers);
-    printf("Marks in English : %d\n",students[rollNo].marks.english);
-    printf("Marks in Maths : %d\n",students[rollNo].marks.maths);
-    printf("Marks in Physics : %d\n",students[rollNo].marks.physics);
+    printf("\nFirst Name : %s\n", students[rollNo-1].name.firstName);
+    printf("Midlle Name : %s\n", students[rollNo-1].name.middleName);
+    printf("Last Name : %s\n", students[rollNo-1].name.lastName);
+    printf("Date of birth : %d/%d/%d\n",students[rollNo-1].dob.day,students[rollNo].dob.month,students[rollNo].dob.year);
+    printf("Marks in Chemistry : %d\n",students[rollNo-1].marks.chemistry);
+    printf("Marks in Computers : %d\n",students[rollNo-1].marks.computers);
+    printf("Marks in English : %d\n",students[rollNo-1].marks.english);
+    printf("Marks in Maths : %d\n",students[rollNo-1].marks.maths);
+    printf("Marks in Physics : %d\n",students[rollNo-1].marks.physics);
     printf("\n");
     return 0;
 }
