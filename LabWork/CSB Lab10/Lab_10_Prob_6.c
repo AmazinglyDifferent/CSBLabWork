@@ -59,8 +59,11 @@ void maxandmindate(int num, struct Employee *Employees){
             if(Employees[dummy1].dates.month < Employees[i].dates.month)
                 maxmon = Employees[i].dates.month;
             else if (Employees[dummy1].dates.month == Employees[i].dates.month){
+                maxmon = Employees[i].dates.month;
                 if (Employees[dummy1].dates.day < Employees[i].dates.day)
                     maxday = Employees[i].dates.day;
+                else
+                    maxday = Employees[dummy1].dates.day;
             }
             else 
                 maxmon = Employees[dummy1].dates.month;
@@ -85,8 +88,11 @@ void maxandmindate(int num, struct Employee *Employees){
             if(Employees[dummy2].dates.month > Employees[i].dates.month)
                 minmon = Employees[i].dates.month;
             else if (Employees[dummy2].dates.month == Employees[i].dates.month){
+                minmon = Employees[i].dates.month;
                 if (Employees[dummy2].dates.day > Employees[i].dates.day)
                     minday = Employees[i].dates.day;
+                else   
+                    minday = Employees[dummy2].dates.day;
             }
             else 
                 minmon = Employees[dummy2].dates.month;
@@ -99,10 +105,11 @@ void maxandmindate(int num, struct Employee *Employees){
     }    
     maxdatearray[0] = maxday;
     maxdatearray[1] = maxmon;
-    maxdatearray[2] = maxday;
+    maxdatearray[2] = maxyear;
     mindatearray[0] = minday;
     mindatearray[1] = minmon;
     mindatearray[2] = minyear;
+
 }
 
 void maxandminsal(struct Employee *Employees, int num){
@@ -162,17 +169,13 @@ void displayemployees(struct Employee *Employees, int num){
 
 void displayemployeeswithdate(struct Employee *Employees, int num){
     maxandmindate(num, Employees);
-    for (int i=0; i<num; i++){
-        if (mindatearray[0]==Employees[i].dates.day && mindatearray[1]==Employees[i].dates.month && mindatearray[2]==Employees[i].dates.year)  
-            print(Employees, i);
-    }
+    if (mindatearray[0]==Employees[dummy2].dates.day && mindatearray[1]==Employees[dummy2].dates.month && mindatearray[2]==Employees[dummy2].dates.year)  
+        print(Employees, dummy2);
 
     print(Employees, dummy3);
 
-    for (int i=0; i<num; i++){
-        if (maxdatearray[0]==Employees[i].dates.day && maxdatearray[1]==Employees[i].dates.month && maxdatearray[2]==Employees[i].dates.year)  
-            print(Employees, i);
-    }
+    if (maxdatearray[0]==Employees[dummy1].dates.day && maxdatearray[1]==Employees[dummy1].dates.month && maxdatearray[2]==Employees[dummy1].dates.year)  
+        print(Employees, dummy1);
 }
 
 void employeedata(struct Employee *Employees, int num){
@@ -190,7 +193,12 @@ void employeedata(struct Employee *Employees, int num){
     }
 }
 
-void sort (int num, char s[50], char str[50][50]){
+void sort (struct Employee *Employees, int num, char s[50], char str[50][50]){
+    
+    for (int i=0; i<num; i++){
+        strcpy(str[i],Employees[i].depname);
+    }
+    
     for(int i=0;i<num;i++){
       for(int j=i+1;j<num;j++)
       {
@@ -198,25 +206,27 @@ void sort (int num, char s[50], char str[50][50]){
             strcpy(s,str[i]);
             strcpy(str[i],str[j]);
             strcpy(str[j],s);
-            strcpy(dep[i],str[j]);
         }
       }
+      strcpy(dep[i],str[i]);
     }   
 }
 
 void displayemployeeswithsal(struct Employee *Employees, int num){
     maxandminsalary(Employees, num);
-    print(Employees, dummy6);
     print(Employees, dummy5);
+    print(Employees, dummy6);
     print(Employees, dummy4);
 
 }
 
 void displayemployeeswithdep(struct Employee *Employees, int num, char s[50], char str[50][50]){
-    sort(num, s, str);
+    sort(Employees, num, s, str);
     for (int i=0; i<num; i++){
-        if(dep[i] == Employees[i].depname)
-            print(Employees, i);
+        for(int j=0; j<num; j++){
+            if(strcmp(dep[i],Employees[j].depname)==0)
+                print(Employees, j);
+        }
     }
 }
 
