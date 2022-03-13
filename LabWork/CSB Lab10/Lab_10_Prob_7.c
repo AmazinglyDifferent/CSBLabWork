@@ -7,6 +7,7 @@ typedef struct
 } complex;
 
 int main() {
+    
     complex num1, num2, num3;
     printf("Enter the real and imaginary part of the first complex number: ");
     scanf("%d %d", &num1.real, &num1.imaginary);
